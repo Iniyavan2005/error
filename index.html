@@ -1,0 +1,2980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ini | ECE Engineer & Cybersecurity Specialist</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0a0a0f;
+            --secondary: #12121a;
+            --accent: #00ff9d;
+            --accent-glow: rgba(0, 255, 157, 0.4);
+            --text: #e0e0e0;
+            --text-secondary: #a0a0b0;
+            --matrix-green: #00ff41;
+            --hacker-red: #ff003c;
+            --cyber-purple: #bd00ff;
+            --blue-neon: #00f3ff;
+            --electronics-blue: #0066ff;
+            --comm-orange: #ff6600;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-family: 'Montserrat', sans-serif;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 255, 157, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(189, 0, 255, 0.03) 0%, transparent 50%),
+                linear-gradient(to bottom, rgba(0, 102, 255, 0.02), transparent 20%),
+                linear-gradient(to top, rgba(255, 102, 0, 0.02), transparent 20%);
+        }
+
+        /* ===== Header & Navigation ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 255, 157, 0.2);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo-icon {
+            color: var(--accent);
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .mode-toggle {
+            background: rgba(0, 255, 157, 0.1);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .mode-toggle:hover {
+            background: rgba(0, 255, 157, 0.2);
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            z-index: 10;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(90deg, var(--accent), var(--blue-neon), var(--electronics-blue), var(--comm-orange));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+            animation: gradientShift 8s ease infinite;
+            background-size: 300% 300%;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #000;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 255, 157, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .btn-electronics {
+            border: 2px solid var(--electronics-blue);
+            color: var(--electronics-blue);
+        }
+
+        .btn-electronics:hover {
+            background: rgba(0, 102, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .btn-communication {
+            border: 2px solid var(--comm-orange);
+            color: var(--comm-orange);
+        }
+
+        .btn-communication:hover {
+            background: rgba(255, 102, 0, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-terminal {
+            width: 100%;
+            max-width: 500px;
+            height: 350px;
+            background: rgba(10, 10, 15, 0.8);
+            border: 1px solid var(--accent);
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 255, 157, 0.2);
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+
+        .terminal-header {
+            padding: 0.8rem 1rem;
+            background: rgba(18, 18, 26, 0.7);
+            border-bottom: 1px solid rgba(0, 255, 157, 0.2);
+            display: flex;
+            align-items: center;
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot:nth-child(1) { background: #ff5f56; }
+        .terminal-dot:nth-child(2) { background: #ffbd2e; }
+        .terminal-dot:nth-child(3) { background: #27c93f; }
+
+        .terminal-body {
+            padding: 1.5rem;
+            height: calc(100% - 45px);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .terminal-line {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .terminal-prompt {
+            color: var(--accent);
+            margin-right: 0.5rem;
+        }
+
+        .typing-text {
+            border-right: 2px solid var(--accent);
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: var(--accent); }
+        }
+
+        .hero-shape {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 255, 157, 0.1) 0%, transparent 70%);
+            z-index: 1;
+        }
+
+        .shape-1 {
+            top: -300px;
+            right: -300px;
+        }
+
+        .shape-2 {
+            bottom: -200px;
+            left: -200px;
+            background: radial-gradient(circle, rgba(189, 0, 255, 0.1) 0%, transparent 70%);
+        }
+
+        .shape-3 {
+            top: 50%;
+            left: -150px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 102, 255, 0.1) 0%, transparent 70%);
+        }
+
+        .shape-4 {
+            bottom: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 102, 0, 0.1) 0%, transparent 70%);
+        }
+
+        /* ===== Sections ===== */
+        .section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ===== About Section ===== */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .about-paragraph {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: rgba(0, 255, 157, 0.1);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .skill-tag.electronics {
+            background: rgba(0, 102, 255, 0.1);
+            color: var(--electronics-blue);
+        }
+
+        .skill-tag.communication {
+            background: rgba(255, 102, 0, 0.1);
+            color: var(--comm-orange);
+        }
+
+        .about-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .code-card {
+            width: 100%;
+            max-width: 500px;
+            background: rgba(18, 18, 26, 0.8);
+            border: 1px solid rgba(0, 255, 157, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .code-header {
+            padding: 0.8rem 1rem;
+            background: rgba(18, 18, 26, 0.9);
+            border-bottom: 1px solid rgba(0, 255, 157, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .code-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .code-dot:nth-child(1) { background: #ff5f56; }
+        .code-dot:nth-child(2) { background: #ffbd2e; }
+        .code-dot:nth-child(3) { background: #27c93f; }
+
+        .code-title {
+            flex-grow: 1;
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .code-body {
+            padding: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            overflow-x: auto;
+        }
+
+        .code-line {
+            margin-bottom: 0.5rem;
+            white-space: pre;
+        }
+
+        .code-comment {
+            color: #6a9955;
+        }
+
+        .code-keyword {
+            color: #569cd6;
+        }
+
+        .code-function {
+            color: #dcdcaa;
+        }
+
+        .code-string {
+            color: #ce9178;
+        }
+
+        .code-var {
+            color: #9cdcfe;
+        }
+
+        /* ===== Skills Section ===== */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: rgba(18, 18, 26, 0.7);
+            border-radius: 10px;
+            padding: 2rem;
+            border: 1px solid rgba(0, 255, 157, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-category-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .skill-category-title.electronics {
+            color: var(--electronics-blue);
+        }
+
+        .skill-category-title.communication {
+            color: var(--comm-orange);
+        }
+
+        .skill-category-icon {
+            font-size: 1.5rem;
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--cyber-purple));
+            border-radius: 4px;
+        }
+
+        .skill-progress.electronics {
+            background: linear-gradient(90deg, var(--electronics-blue), #00ccff);
+        }
+
+        .skill-progress.communication {
+            background: linear-gradient(90deg, var(--comm-orange), #ff9933);
+        }
+
+        /* ===== Certifications Section ===== */
+        .certifications-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .certification-card {
+            background: rgba(18, 18, 26, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 255, 157, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent);
+        }
+
+        .certification-image {
+            height: 200px;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certification-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .certification-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .certification-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .certification-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent);
+        }
+
+        .certification-issuer {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .certification-date {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+        }
+
+        .certification-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .certification-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: auto;
+        }
+
+        .certification-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .certification-link:hover {
+            color: var(--accent);
+        }
+
+        .certification-link i {
+            font-size: 1rem;
+        }
+
+        /* ===== Projects Section ===== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(18, 18, 26, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 255, 157, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent);
+        }
+
+        .project-card.electronics {
+            border-color: rgba(0, 102, 255, 0.1);
+        }
+
+        .project-card.electronics:hover {
+            border-color: var(--electronics-blue);
+        }
+
+        .project-card.communication {
+            border-color: rgba(255, 102, 0, 0.1);
+        }
+
+        .project-card.communication:hover {
+            border-color: var(--comm-orange);
+        }
+
+        .project-image {
+            height: 200px;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .project-tag.electronics {
+            color: var(--electronics-blue);
+        }
+
+        .project-tag.communication {
+            color: var(--comm-orange);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent);
+        }
+
+        .project-title.electronics {
+            color: var(--electronics-blue);
+        }
+
+        .project-title.communication {
+            color: var(--comm-orange);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(0, 255, 157, 0.1);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .tech-tag.electronics {
+            background: rgba(0, 102, 255, 0.1);
+            color: var(--electronics-blue);
+        }
+
+        .tech-tag.communication {
+            background: rgba(255, 102, 0, 0.1);
+            color: var(--comm-orange);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: auto;
+        }
+
+        .project-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--accent);
+        }
+
+        .project-link.electronics:hover {
+            color: var(--electronics-blue);
+        }
+
+        .project-link.communication:hover {
+            color: var(--comm-orange);
+        }
+
+        .project-link i {
+            font-size: 1rem;
+        }
+
+        /* ===== Contact Section ===== */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(0, 255, 157, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+
+        .contact-icon.electronics {
+            background: rgba(0, 102, 255, 0.1);
+            color: var(--electronics-blue);
+        }
+
+        .contact-icon.communication {
+            background: rgba(255, 102, 0, 0.1);
+            color: var(--comm-orange);
+        }
+
+        .contact-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+            color: var(--accent);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .contact-details h3.electronics {
+            color: var(--electronics-blue);
+        }
+
+        .contact-details h3.communication {
+            color: var(--comm-orange);
+        }
+
+        .contact-details p, .contact-details a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            color: var(--accent);
+        }
+
+        .contact-details a.electronics:hover {
+            color: var(--electronics-blue);
+        }
+
+        .contact-details a.communication:hover {
+            color: var(--comm-orange);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0, 255, 157, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--accent);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        .social-link.electronics {
+            background: rgba(0, 102, 255, 0.1);
+            color: var(--electronics-blue);
+        }
+
+        .social-link.electronics:hover {
+            background: var(--electronics-blue);
+            color: #000;
+        }
+
+        .social-link.communication {
+            background: rgba(255, 102, 0, 0.1);
+            color: var(--comm-orange);
+        }
+
+        .social-link.communication:hover {
+            background: var(--comm-orange);
+            color: #000;
+        }
+
+        .contact-form {
+            background: rgba(18, 18, 26, 0.7);
+            border-radius: 10px;
+            padding: 2rem;
+            border: 1px solid rgba(0, 255, 157, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            color: var(--text);
+            font-family: 'Montserrat', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--accent);
+            color: #000;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Orbitron', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: rgba(10, 10, 15, 0.9);
+            border-top: 1px solid rgba(0, 255, 157, 0.1);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--accent);
+        }
+
+        .footer-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* ===== Terminal Mode ===== */
+        .terminal-mode {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            z-index: 2000;
+            display: none;
+            flex-direction: column;
+        }
+
+        /* ===== CyberTerminal ===== */
+        .cyber-terminal {
+            background: rgba(10, 10, 15, 0.97);
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            box-shadow: 
+                0 0 15px var(--accent-glow),
+                0 0 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            width: 90%;
+            max-width: 1000px;
+            height: 80vh;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            animation: terminalGlow 4s infinite alternate;
+            margin: auto;
+        }
+
+        @keyframes terminalGlow {
+            0% { box-shadow: 0 0 15px var(--accent-glow), 0 0 30px rgba(0, 0, 0, 0.5); }
+            50% { box-shadow: 0 0 25px var(--accent-glow), 0 0 45px rgba(0, 0, 0, 0.6); }
+            100% { box-shadow: 0 0 15px var(--accent-glow), 0 0 30px rgba(0, 0, 0, 0.5); }
+        }
+
+        .terminal-header {
+            background: linear-gradient(90deg, #0a0a0f, #12121a);
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--accent);
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .terminal-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--cyber-purple));
+            animation: headerScanline 3s linear infinite;
+        }
+
+        @keyframes headerScanline {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .terminal-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .terminal-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            box-shadow: 0 0 5px currentColor;
+        }
+
+        .terminal-dot:nth-child(1) { background: #ff5f56; }
+        .terminal-dot:nth-child(2) { background: #ffbd2e; }
+        .terminal-dot:nth-child(3) { background: #27c93f; }
+
+        .terminal-title {
+            margin-left: 15px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px var(--accent-glow);
+        }
+
+        .terminal-body {
+            padding: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 15px;
+            line-height: 1.8;
+            flex-grow: 1;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent) transparent;
+            background: 
+                linear-gradient(rgba(10, 10, 15, 0.9), rgba(10, 10, 15, 0.9)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="1" height="1" x="0" y="0" fill="%2300ff9d" opacity="0.05"/></svg>');
+        }
+
+        .terminal-body::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .terminal-body::-webkit-scrollbar-thumb {
+            background-color: var(--accent);
+            border-radius: 3px;
+        }
+
+        .terminal-line {
+            margin-bottom: 12px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .terminal-prompt {
+            color: var(--accent);
+            margin-right: 8px;
+            text-shadow: 0 0 5px var(--accent-glow);
+        }
+
+        .terminal-command {
+            color: var(--text);
+            flex-grow: 1;
+        }
+
+        .terminal-response {
+            color: var(--text-secondary);
+            width: 100%;
+            margin-top: 5px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .terminal-response::before {
+            content: '>';
+            position: absolute;
+            left: 5px;
+            color: var(--accent);
+            opacity: 0.6;
+        }
+
+        .blink {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* ===== Input Line ===== */
+        .input-line {
+            display: flex;
+            padding: 0 20px 20px;
+            align-items: center;
+            background: rgba(18, 18, 26, 0.7);
+            border-top: 1px solid rgba(0, 255, 157, 0.2);
+        }
+
+        #terminal-input {
+            background: transparent;
+            border: none;
+            color: var(--text);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 15px;
+            flex-grow: 1;
+            padding: 8px 0;
+            outline: none;
+            caret-color: var(--accent);
+        }
+
+        /* ===== GUI Elements Inside Terminal ===== */
+        .skill-meter {
+            margin: 15px 0;
+            width: 100%;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .meter-container {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .meter-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--cyber-purple));
+            border-radius: 4px;
+            transition: width 1s ease-out;
+        }
+
+        .meter-fill.electronics {
+            background: linear-gradient(90deg, var(--electronics-blue), #00ccff);
+        }
+
+        .meter-fill.communication {
+            background: linear-gradient(90deg, var(--comm-orange), #ff9933);
+        }
+
+        .project-card {
+            background: rgba(18, 18, 26, 0.7);
+            border-left: 3px solid var(--accent);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .project-card.electronics {
+            border-left-color: var(--electronics-blue);
+        }
+
+        .project-card.communication {
+            border-left-color: var(--comm-orange);
+        }
+
+        .project-title {
+            color: var(--accent);
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 8px;
+        }
+
+        .project-title.electronics {
+            color: var(--electronics-blue);
+        }
+
+        .project-title.communication {
+            color: var(--comm-orange);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background: rgba(0, 255, 157, 0.1);
+            color: var(--accent);
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+
+        .tag.electronics {
+            background: rgba(0, 102, 255, 0.1);
+            color: var(--electronics-blue);
+        }
+
+        .tag.communication {
+            background: rgba(255, 102, 0, 0.1);
+            color: var(--comm-orange);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .badge-gold { background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(255,215,0,0.1)); border: 1px solid gold; color: gold; }
+        .badge-silver { background: linear-gradient(135deg, rgba(192,192,192,0.2), rgba(192,192,192,0.1)); border: 1px solid silver; color: silver; }
+        .badge-bronze { background: linear-gradient(135deg, rgba(205,127,50,0.2), rgba(205,127,50,0.1)); border: 1px solid #cd7f32; color: #cd7f32; }
+
+        .resume-preview {
+            background: rgba(18, 18, 26, 0.7);
+            border: 1px dashed var(--accent);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .resume-preview::before {
+            content: 'RESUME PREVIEW';
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: var(--secondary);
+            padding: 0 5px;
+            font-size: 12px;
+            color: var(--accent);
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 10px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* ===== Matrix Background ===== */
+        #matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        /* ===== Circuit Board Pattern ===== */
+        .circuit-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.03;
+            pointer-events: none;
+            background-image: 
+                linear-gradient(to right, var(--electronics-blue) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--electronics-blue) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-text {
+                order: 2;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                order: 1;
+                justify-content: center;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .projects-grid, .certifications-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .cyber-terminal {
+                width: 95%;
+                height: 90vh;
+            }
+            
+            .terminal-body {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!-- Fullscreen Mode Prompt -->
+
+
+    <!-- Matrix Background -->
+    <canvas id="matrix-bg"></canvas>
+
+    <!-- Circuit Board Overlay -->
+    <div class="circuit-overlay"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="#" class="logo">
+            <i class="fas fa-microchip logo-icon"></i>
+            <span>Ini</span>
+        </a>
+        <nav class="nav-links">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#certifications" class="nav-link">Certifications</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <button class="mode-toggle" id="terminal-toggle">
+            <i class="fas fa-terminal"></i>
+            <span>Terminal Mode</span>
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">LOKESH</h1>
+                <h2 class="hero-subtitle">Bridging hardware, software, and security</h2>
+                <p class="hero-description">
+                    I'm Ini, an Electronics and Communication Engineering professional with expertise in 
+                    embedded systems, network security, and Python development. I create secure systems 
+                    from silicon to software and enjoy solving complex challenges across multiple domains.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-code"></i>
+                        View Projects
+                    </a>
+                    <a href="#certifications" class="btn btn-secondary">
+                        <i class="fas fa-certificate"></i>
+                        Certifications
+                    </a>
+                    <a href="#electronics" class="btn btn-electronics">
+                        <i class="fas fa-microchip"></i>
+                        Electronics
+                    </a>
+                    <a href="#communication" class="btn btn-communication">
+                        <i class="fas fa-satellite-dish"></i>
+                        Communication
+                    </a>
+                    <a href="resume.pdf" class="btn btn-primary" download="Ini_ECE_Cybersecurity_Resume.pdf" id="resume-download">
+                        <i class="fas fa-file-download"></i>
+                        Download Resume
+                    </a>
+                    <script>
+
+
+document.getElementById('resume-download').addEventListener('click', function(e) {
+    e.preventDefault();
+    const link = document.createElement('a');
+    link.href = 'resume.pdf';
+    link.download = 'Ini_ECE_Cybersecurity_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Optional: Track the download
+    console.log('Resume download initiated');
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'resume_download', {
+            'event_category': 'engagement'
+        });
+    }
+});
+
+                    </script>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <div class="terminal-dot"></div>
+                            <div class="terminal-dot"></div>
+                            <div class="terminal-dot"></div>
+                        </div>
+                        <div class="terminal-title">Ini@portfolio:~</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span> <span class="terminal-command typing-text">whoami</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span> <span class="terminal-command typing-text">cat skills.txt</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span> <span class="terminal-command typing-text">python3 --version</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span> <span class="terminal-command typing-text">./secure_the_world.sh</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-shape shape-1"></div>
+                <div class="hero-shape shape-2"></div>
+                <div class="hero-shape shape-3"></div>
+                <div class="hero-shape shape-4"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">
+                Multidisciplinary engineer with expertise in electronics, communication systems, 
+                software development, and cybersecurity. Here's a bit more about what I do.
+            </p>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-paragraph">
+                        I'm an Electronics and Communication Engineering graduate with a passion for 
+                        cybersecurity and software development. My unique skill set bridges the gap 
+                        between hardware and software, allowing me to approach security challenges 
+                        from both perspectives.
+                    </p>
+                    <p class="about-paragraph">
+                        My expertise spans embedded systems design, network protocols, secure 
+                        communication systems, and Python development for both security tools and 
+                        automation. I specialize in identifying vulnerabilities at the intersection 
+                        of hardware and software.
+                    </p>
+                    <p class="about-paragraph">
+                        When I'm not working on projects, I participate in CTF competitions (with a 
+                        focus on hardware and binary exploitation challenges), contribute to 
+                        open-source security projects, and mentor aspiring engineers.
+                    </p>
+                    <div class="about-skills">
+                        <span class="skill-tag">Embedded Systems</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag electronics">FPGA Design</span>
+                        <span class="skill-tag communication">5G Security</span>
+                        <span class="skill-tag">Penetration Testing</span>
+                        <span class="skill-tag">Secure Coding</span>
+                        <span class="skill-tag electronics">IoT Security</span>
+                        <span class="skill-tag communication">RF Engineering</span>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="code-card">
+                        <div class="code-header">
+                            <div class="code-dot"></div>
+                            <div class="code-dot"></div>
+                            <div class="code-dot"></div>
+                            <div class="code-title">secure_embedded.py</div>
+                        </div>
+                        <div class="code-body">
+                            <div class="code-line"><span class="code-keyword">import</span> <span class="code-var">serial</span></div>
+                            <div class="code-line"><span class="code-keyword">from</span> <span class="code-var">Crypto.Cipher</span> <span class="code-keyword">import</span> <span class="code-var">AES</span></div>
+                            <div class="code-line"></div>
+                            <div class="code-line"><span class="code-comment"># Secure communication with embedded device</span></div>
+                            <div class="code-line"><span class="code-keyword">class</span> <span class="code-function">SecureDevice</span>:</div>
+                            <div class="code-line">    <span class="code-keyword">def</span> <span class="code-function">__init__</span>(<span class="code-var">self</span>, <span class="code-var">port</span>):</div>
+                            <div class="code-line">        <span class="code-var">self</span>.ser = <span class="code-function">serial.Serial</span>(<span class="code-var">port</span>, <span class="code-var">115200</span>)</div>
+                            <div class="code-line">        <span class="code-var">self</span>.key = <span class="code-string">'32-byte-key-for-AES-256-encryption'</span></div>
+                            <div class="code-line"></div>
+                            <div class="code-line">    <span class="code-keyword">def</span> <span class="code-function">secure_send</span>(<span class="code-var">self</span>, <span class="code-var">data</span>):</div>
+                            <div class="code-line">        <span class="code-comment"># Encrypt and send to device</span></div>
+                            <div class="code-line">        <span class="code-var">cipher</span> = <span class="code-function">AES.new</span>(<span class="code-var">self</span>.key, <span class="code-var">AES.MODE_EAX</span>)</div>
+                            <div class="code-line">        <span class="code-var">ciphertext</span>, <span class="code-var">tag</span> = <span class="code-var">cipher</span>.<span class="code-function">encrypt_and_digest</span>(<span class="code-var">data</span>)</div>
+                            <div class="code-line">        <span class="code-var">self</span>.ser.<span class="code-function">write</span>(<span class="code-var">ciphertext</span>)</div>
+                            <div class="code-line"></div>
+                            <div class="code-line">    <span class="code-keyword">def</span> <span class="code-function">secure_receive</span>(<span class="code-var">self</span>):</div>
+                            <div class="code-line">        <span class="code-comment"># Receive and decrypt from device</span></div>
+                            <div class="code-line">        <span class="code-var">ciphertext</span> = <span class="code-var">self</span>.ser.<span class="code-function">read</span>(<span class="code-var">1024</span>)</div>
+                            <div class="code-line">        <span class="code-var">cipher</span> = <span class="code-function">AES.new</span>(<span class="code-var">self</span>.key, <span class="code-var">AES.MODE_EAX</span>)</div>
+                            <div class="code-line">        <span class="code-keyword">return</span> <span class="code-var">cipher</span>.<span class="code-function">decrypt</span>(<span class="code-var">ciphertext</span>)</div>
+                            <div class="code-line"></div>
+                            <div class="code-line"><span class="code-keyword">if</span> <span class="code-var">__name__</span> == <span class="code-string">"__main__"</span>:</div>
+                            <div class="code-line">    <span class="code-var">device</span> = <span class="code-function">SecureDevice</span>(<span class="code-string">"/dev/ttyUSB0"</span>)</div>
+                            <div class="code-line">    <span class="code-var">device</span>.<span class="code-function">secure_send</span>(<span class="code-string">b"Hello, Embedded World!"</span>)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="section-subtitle">
+                My expertise spans across multiple domains of engineering and technology. 
+                Here's a breakdown of my core competencies.
+            </p>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <i class="fas fa-shield-alt skill-category-icon"></i>
+                        Cybersecurity
+                    </h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Penetration Testing</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Embedded Security</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Network Security</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Cryptography</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title electronics">
+                        <i class="fas fa-microchip skill-category-icon"></i>
+                        Electronics
+                    </h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Embedded Systems</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress electronics" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>FPGA Design</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress electronics" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>PCB Design</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress electronics" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>IoT Devices</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress electronics" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title communication">
+                        <i class="fas fa-satellite-dish skill-category-icon"></i>
+                        Communication
+                    </h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Wireless Protocols</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress communication" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>5G Security</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress communication" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>RF Engineering</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress communication" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>DSP</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress communication" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 class="skill-category-title">
+                        <i class="fab fa-python skill-category-icon"></i>
+                        Development
+                    </h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Python</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>C/C++</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Embedded C</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>VHDL/Verilog</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="section" id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <p class="section-subtitle">
+                Professional certifications that validate my expertise across multiple domains.
+            </p>
+            <div class="certifications-container">
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="https://raw.githubusercontent.com/Inihere0/Inihere0/main/assets/oscp-cert.jpg" alt="OSCP Certification">
+                        <span class="certification-badge">Security</span>
+                    </div>
+                    <div class="certification-content">
+                        <h3 class="certification-title">OSCP</h3>
+                        <p class="certification-issuer">Offensive Security</p>
+                        <p class="certification-date">Earned: 2023</p>
+                        <p class="certification-description">
+                            Offensive Security Certified Professional - Practical penetration testing certification 
+                            with 24-hour hands-on exam.
+                        </p>
+                        <div class="certification-links">
+                            <a href="#" class="certification-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Verify
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="https://raw.githubusercontent.com/Inihere0/Inihere0/main/assets/cissp-cert.jpg" alt="CISSP Certification">
+                        <span class="certification-badge">Security</span>
+                    </div>
+                    <div class="certification-content">
+                        <h3 class="certification-title">CISSP</h3>
+                        <p class="certification-issuer">(ISC)²</p>
+                        <p class="certification-date">Earned: 2022</p>
+                        <p class="certification-description">
+                            Certified Information Systems Security Professional - Gold standard in information security.
+                        </p>
+                        <div class="certification-links">
+                            <a href="#" class="certification-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Verify
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="https://raw.githubusercontent.com/Inihere0/Inihere0/main/assets/embedded-cert.jpg" alt="Embedded Systems Certification">
+                        <span class="certification-badge electronics">Electronics</span>
+                    </div>
+                    <div class="certification-content">
+                        <h3 class="certification-title">Embedded Systems Expert</h3>
+                        <p class="certification-issuer">IEEE</p>
+                        <p class="certification-date">Earned: 2021</p>
+                        <p class="certification-description">
+                            Advanced certification in embedded systems design, RTOS, and low-level programming.
+                        </p>
+                        <div class="certification-links">
+                            <a href="#" class="certification-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Verify
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="https://raw.githubusercontent.com/Inihere0/Inihere0/main/assets/5g-cert.jpg" alt="5G Certification">
+                        <span class="certification-badge communication">Communication</span>
+                    </div>
+                    <div class="certification-content">
+                        <h3 class="certification-title">5G Security Specialist</h3>
+                        <p class="certification-issuer">GSMA</p>
+                        <p class="certification-date">Earned: 2022</p>
+                        <p class="certification-description">
+                            Specialization in 5G network architecture, protocols, and security considerations.
+                        </p>
+                        <div class="certification-links">
+                            <a href="#" class="certification-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Verify
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="https://raw.githubusercontent.com/Inihere0/Inihere0/main/assets/python-cert.jpg" alt="Python Certification">
+                        <span class="certification-badge">Development</span>
+                    </div>
+                    <div class="certification-content">
+                        <h3 class="certification-title">Python Security Expert</h3>
+                        <p class="certification-issuer">Python Institute</p>
+                        <p class="certification-date">Earned: 2021</p>
+                        <p class="certification-description">
+                            Advanced Python programming with focus on security applications and secure coding.
+                        </p>
+                        <div class="certification-links">
+                            <a href="#" class="certification-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Verify
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="https://raw.githubusercontent.com/Inihere0/Inihere0/main/assets/iot-cert.jpg" alt="IoT Certification">
+                        <span class="certification-badge electronics">Electronics</span>
+                    </div>
+                    <div class="certification-content">
+                        <h3 class="certification-title">IoT Security Professional</h3>
+                        <p class="certification-issuer">IoT Security Foundation</p>
+                        <p class="certification-date">Earned: 2023</p>
+                        <p class="certification-description">
+                            Specialization in securing Internet of Things devices and networks.
+                        </p>
+                        <div class="certification-links">
+                            <a href="#" class="certification-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Verify
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">
+                A selection of my work across electronics, communication, development, and security.
+            </p>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://raw.githubusercontent.com/Inihere0/Inihere0/main/assets/python-security.jpg" alt="Python Security Tool">
+                    <span class="project-tag">Python</span>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">NeoBypasser</h3>
+                    <p class="project-description">
+                        Advanced proxy system for penetration testing and security research with 
+                        built-in request manipulation and automated scanning capabilities.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Asyncio</span>
+                        <span class="tech-tag">Security</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Inihere0/NeoBypasser" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                            View Code
+                        </a>
+                        <a href="#" class="project-link">
+                            <i class="fas fa-book"></i>
+                            Documentation
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card electronics">
+                <div class="project-image">
+                    <img src="https://raw.githubusercontent.com/Inihere0/Inihere0/main/assets/embedded-security.jpg" alt="Embedded Security Project">
+                    <span class="project-tag electronics">Electronics</span>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title electronics">SecureMCU</h3>
+                    <p class="project-description">
+                        Hardware security module for microcontrollers with secure boot, encrypted 
+                        communication, and tamper detection.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag electronics">C</span>
+                        <span class="tech-tag electronics">ARM</span>
+                        <span class="tech-tag">Security</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Inihere0/SecureMCU" class="project-link electronics" target="_blank">
+                            <i class="fab fa-github"></i>
+                            View Code
+                        </a>
+                        <a href="#" class="project-link electronics">
+                            <i class="fas fa-microchip"></i>
+                            Schematics
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card communication">
+                <div class="project-image">
+                    <img src="https://raw.githubusercontent.com/Inihere0/Inihere0/main/assets/5g-security.jpg" alt="5G Security Project">
+                    <span class="project-tag communication">Communication</span>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title communication">5G SecAnalyzer</h3>
+                    <p class="project-description">
+                        Research project analyzing security vulnerabilities in 5G network slicing 
+                        and proposing mitigation strategies.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag communication">Python</span>
+                        <span class="tech-tag communication">5G</span>
+                        <span class="tech-tag">Security</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Inihere0/5G-SecAnalyzer" class="project-link communication" target="_blank">
+                            <i class="fab fa-github"></i>
+                            View Code
+                        </a>
+                        <a href="#" class="project-link communication">
+                            <i class="fas fa-file-pdf"></i>
+                            Whitepaper
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card electronics">
+                <div class="project-image">
+                    <img src="https://raw.githubusercontent.com/Inihere0/Inihere0/main/assets/fpga-security.jpg" alt="FPGA Security Project">
+                    <span class="project-tag electronics">FPGA</span>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title electronics">CryptoFPGA</h3>
+                    <p class="project-description">
+                        Hardware-accelerated cryptographic processor implemented on FPGA with 
+                        side-channel attack resistance.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag electronics">Verilog</span>
+                        <span class="tech-tag">Cryptography</span>
+                        <span class="tech-tag">Security</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Inihere0/CryptoFPGA" class="project-link electronics" target="_blank">
+                            <i class="fab fa-github"></i>
+                            View Code
+                        </a>
+                        <a href="#" class="project-link electronics">
+                            <i class="fas fa-project-diagram"></i>
+                            Block Diagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://raw.githubusercontent.com/Inihere0/Inihere0/main/assets/ctf-tools.jpg" alt="CTF Toolkit">
+                    <span class="project-tag">CTF</span>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">CTF Toolkit</h3>
+                    <p class="project-description">
+                        Collection of Python scripts and utilities for solving CTF challenges 
+                        across various categories (Web, Crypto, Reversing, Forensics).
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">CTF</span>
+                        <span class="tech-tag">Automation</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Inihere0/CTF-Toolkit" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                            View Code
+                        </a>
+                        <a href="#" class="project-link">
+                            <i class="fas fa-trophy"></i>
+                            Challenges
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card communication">
+                <div class="project-image">
+                    <img src="https://raw.githubusercontent.com/Inihere0/Inihere0/main/assets/rf-security.jpg" alt="RF Security Project">
+                    <span class="project-tag communication">RF</span>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title communication">RF SecLab</h3>
+                    <p class="project-description">
+                        Software-defined radio toolkit for analyzing and securing wireless 
+                        communication protocols (BLE, Zigbee, LoRa).
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag communication">Python</span>
+                        <span class="tech-tag communication">SDR</span>
+                        <span class="tech-tag">Security</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Inihere0/RF-SecLab" class="project-link communication" target="_blank">
+                            <i class="fab fa-github"></i>
+                            View Code
+                        </a>
+                        <a href="#" class="project-link communication">
+                            <i class="fas fa-wave-square"></i>
+                            Demos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="https://github.com/Inihere0" class="btn btn-primary" target="_blank">
+                <i class="fab fa-github"></i>
+                View All Projects on GitHub
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section" id="contact">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">
+            Interested in collaborating or have technical questions? 
+            Feel free to reach out through any of these channels.
+        </p>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <a href="mailto:Ini@hacker.lab">Ini@hacker.lab</a>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>GitHub</h3>
+                        <a href="https://github.com/Inihere0" target="_blank">github.com/Inihere0</a>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>LinkedIn</h3>
+                        <a href="https://linkedin.com/in/Ini-cybersec" target="_blank">linkedin.com/in/Ini-cybersec</a>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <div class="contact-icon electronics">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3 class="electronics">Hardware Projects</h3>
+                        <a href="https://hackaday.io/Ini" class="electronics" target="_blank">hackaday.io/Ini</a>
+                    </div>
+                </div>
+                <div class="contact-method">
+                    <div class="contact-icon communication">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3 class="communication">Research Papers</h3>
+                        <a href="https://researchgate.net/Ini" class="communication" target="_blank">researchgate.net/Ini</a>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link electronics" target="_blank">
+                        <i class="fab fa-hackerrank"></i>
+                    </a>
+                    <a href="#" class="social-link communication" target="_blank">
+                        <i class="fab fa-stack-overflow"></i>
+                    </a>
+                    <a href="#" class="social-link" target="_blank">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" id="subject" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" class="form-textarea" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="#about" class="footer-link">About</a>
+            <a href="#skills" class="footer-link">Skills</a>
+            <a href="#certifications" class="footer-link">Certifications</a>
+            <a href="#projects" class="footer-link">Projects</a>
+            <a href="#contact" class="footer-link">Contact</a>
+            <a href="#" class="footer-link" id="terminal-footer-toggle">Terminal Mode</a>
+        </div>
+        <p class="footer-text">
+            &copy; 2023 Ini - Electronics & Cybersecurity Engineer. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+<!-- Terminal Mode -->
+<div class="terminal-mode" id="terminal-mode">
+    <!-- Main Terminal -->
+    <div class="cyber-terminal">
+        <div class="terminal-header">
+            <div class="terminal-dots">
+                <div class="terminal-dot"></div>
+                <div class="terminal-dot"></div>
+                <div class="terminal-dot"></div>
+            </div>
+            <div class="terminal-title">Ini-ENGINEERING-PORTFOLIO</div>
+        </div>
+        <div class="terminal-body" id="terminal">
+            <div class="terminal-line">
+                <span class="terminal-prompt">$</span> <span class="terminal-command">whoami</span>
+            </div>
+            <div class="terminal-response">
+                Ini - Electronics & Cybersecurity Engineer
+            </div>
+            <div class="terminal-line">
+                <span class="terminal-prompt">$</span> <span class="terminal-command">cat about.txt</span>
+            </div>
+            <div class="terminal-response">
+                > ECE Engineer | Security Researcher | Embedded Systems | Python Developer<br>
+                > Focus Areas: Hardware Security, Secure Comms, FPGA, IoT, 5G Security
+            </div>
+            <div class="terminal-line">
+                <span class="terminal-prompt">$</span> <span class="terminal-command">help</span>
+            </div>
+            <div class="terminal-response">
+                Available commands:<br>
+                <span class="terminal-prompt">∙ projects</span> - Show engineering projects<br>
+                <span class="terminal-prompt">∙ skills</span> - Display technical skills<br>
+                <span class="terminal-prompt">∙ certs</span> - View certifications<br>
+                <span class="terminal-prompt">∙ electronics</span> - Electronics expertise<br>
+                <span class="terminal-prompt">∙ comms</span> - Communication systems<br>
+                <span class="terminal-prompt">∙ python</span> - Python projects<br>
+                <span class="terminal-prompt">∙ resume</span> - View and download resume<br>
+                <span class="terminal-prompt">∙ contact</span> - Contact info<br>
+                <span class="terminal-prompt">∙ gui</span> - Switch to GUI mode<br>
+                <span class="terminal-prompt">∙ clear</span> - Clear terminal
+            </div>
+            <div class="terminal-line" id="command-line">
+                <span class="terminal-prompt">$</span> 
+                <span class="terminal-command" id="current-command"></span>
+                <span class="blink">█</span>
+            </div>
+        </div>
+        <div class="input-line">
+            <span class="terminal-prompt">></span>
+            <input type="text" id="terminal-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Type command...">
+        </div>
+    </div>
+</div>
+
+<!-- Terminal Logic -->
+<script>
+    // Terminal mode toggle
+    const terminalToggle = document.getElementById('terminal-toggle');
+    const terminalFooterToggle = document.getElementById('terminal-footer-toggle');
+    const terminalMode = document.getElementById('terminal-mode');
+    
+    terminalToggle.addEventListener('click', () => {
+        terminalMode.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    });
+    
+    terminalFooterToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        terminalMode.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    });
+    
+    // Terminal command processing
+    const terminal = document.getElementById('terminal');
+    const inputField = document.getElementById('terminal-input');
+    let currentCommand = document.getElementById('current-command');
+    
+    // Default terminal content
+    const defaultTerminalContent = `
+        <div class="terminal-line">
+            <span class="terminal-prompt">$</span> <span class="terminal-command">whoami</span>
+        </div>
+        <div class="terminal-response">
+            Ini - Electronics & Cybersecurity Engineer
+        </div>
+        <div class="terminal-line">
+            <span class="terminal-prompt">$</span> <span class="terminal-command">cat about.txt</span>
+        </div>
+        <div class="terminal-response">
+            > ECE Engineer | Security Researcher | Embedded Systems | Python Developer<br>
+            > Focus Areas: Hardware Security, Secure Comms, FPGA, IoT, 5G Security
+        </div>
+        <div class="terminal-line">
+            <span class="terminal-prompt">$</span> <span class="terminal-command">help</span>
+        </div>
+        <div class="terminal-response">
+            Available commands:<br>
+            <span class="terminal-prompt">∙ projects</span> - Show engineering projects<br>
+            <span class="terminal-prompt">∙ skills</span> - Display technical skills<br>
+            <span class="terminal-prompt">∙ certs</span> - View certifications<br>
+            <span class="terminal-prompt">∙ electronics</span> - Electronics expertise<br>
+            <span class="terminal-prompt">∙ comms</span> - Communication systems<br>
+            <span class="terminal-prompt">∙ python</span> - Python projects<br>
+            <span class="terminal-prompt">∙ resume</span> - View and download resume<br>
+            <span class="terminal-prompt">∙ contact</span> - Contact info<br>
+            <span class="terminal-prompt">∙ gui</span> - Switch to GUI mode<br>
+            <span class="terminal-prompt">∙ clear</span> - Clear terminal
+        </div>
+        <div class="terminal-line" id="command-line">
+            <span class="terminal-prompt">$</span> 
+            <span class="terminal-command" id="current-command"></span>
+            <span class="blink">█</span>
+        </div>
+    `;
+    
+    // Command definitions
+    const commands = {
+        help: () => `<div class="terminal-response">
+            Available commands:<br>
+            <span class="terminal-prompt">∙ projects</span> - Show engineering projects<br>
+            <span class="terminal-prompt">∙ skills</span> - Display technical skills<br>
+            <span class="terminal-prompt">∙ certs</span> - View certifications<br>
+            <span class="terminal-prompt">∙ electronics</span> - Electronics expertise<br>
+            <span class="terminal-prompt">∙ comms</span> - Communication systems<br>
+            <span class="terminal-prompt">∙ python</span> - Python projects<br>
+            <span class="terminal-prompt">∙ resume</span> - View and download resume<br>
+            <span class="terminal-prompt">∙ contact</span> - Contact info<br>
+            <span class="terminal-prompt">∙ gui</span> - Switch to GUI mode<br>
+            <span class="terminal-prompt">∙ clear</span> - Clear terminal
+        </div>`,
+        
+        skills: () => {
+            return `<div class="terminal-response">
+                <span class="terminal-prompt">Technical Skills:</span>
+                
+                <div class="skill-meter">
+                    <div class="skill-name">
+                        <span>Embedded Security</span>
+                        <span>92%</span>
+                    </div>
+                    <div class="meter-container">
+                        <div class="meter-fill" style="width: 92%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-meter">
+                    <div class="skill-name">
+                        <span>Python Development</span>
+                        <span>95%</span>
+                    </div>
+                    <div class="meter-container">
+                        <div class="meter-fill" style="width: 95%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-meter">
+                    <div class="skill-name">
+                        <span>FPGA Design</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="meter-container">
+                        <div class="meter-fill electronics" style="width: 85%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-meter">
+                    <div class="skill-name">
+                        <span>5G Security</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="meter-container">
+                        <div class="meter-fill communication" style="width: 80%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-meter">
+                    <div class="skill-name">
+                        <span>Penetration Testing</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="meter-container">
+                        <div class="meter-fill" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>`;
+        },
+        
+        python: () => {
+            return `<div class="terminal-response">
+                <span class="terminal-prompt">Python Expertise:</span>
+                
+                <div style="margin-top: 10px;">
+                    <span class="terminal-prompt">∙</span> Security tool development<br>
+                    <span class="terminal-prompt">∙</span> Hardware interaction (Serial, SPI, I2C)<br>
+                    <span class="terminal-prompt">∙</span> SDR and wireless protocol analysis<br>
+                    <span class="terminal-prompt">∙</span> Cryptography implementations<br>
+                    <span class="terminal-prompt">∙</span> Automation of security testing
+                </div>
+                
+                <div style="margin-top: 15px;">
+                    <span class="terminal-prompt">Key Libraries:</span><br>
+                    ∙ PySerial, PyVISA, LibUSB<br>
+                    ∙ Scapy, Cryptography, PyCrypto<br>
+                    ∙ NumPy, SciPy for signal processing<br>
+                    ∙ Pandas for data analysis
+                </div>
+                
+                <div style="margin-top: 15px;">
+                    <span class="terminal-prompt">Notable Projects:</span><br>
+                    ∙ NeoBypasser - Advanced proxy system<br>
+                    ∙ RF SecLab - Wireless security toolkit<br>
+                    ∙ EmbeddedSec - Hardware testing framework<br>
+                    ∙ CTF Toolkit - Challenge solving scripts
+                </div>
+            </div>`;
+        },
+        
+        electronics: () => {
+            return `<div class="terminal-response">
+                <span class="terminal-prompt">Electronics Expertise:</span>
+                
+                <div style="margin-top: 10px;">
+                    <span class="terminal-prompt">∙</span> Embedded systems design (ARM, AVR, ESP)<br>
+                    <span class="terminal-prompt">∙</span> FPGA development (Xilinx, Intel)<br>
+                    <span class="terminal-prompt">∙</span> PCB design and prototyping<br>
+                    <span class="terminal-prompt">∙</span> Hardware security research<br>
+                    <span class="terminal-prompt">∙</span> IoT device development
+                </div>
+                
+                <div style="margin-top: 15px;">
+                    <span class="terminal-prompt">Key Technologies:</span><br>
+                    ∙ Altium Designer, KiCad<br>
+                    ∙ Verilog, VHDL<br>
+                    ∙ JTAG, SWD debugging<br>
+                    ∙ Side-channel analysis
+                </div>
+                
+                <div style="margin-top: 15px;">
+                    <span class="terminal-prompt">Notable Projects:</span><br>
+                    ∙ SecureMCU - Hardware security module<br>
+                    ∙ CryptoFPGA - Cryptographic processor<br>
+                    ∙ IoTGuard - Secure IoT framework<br>
+                    ∙ ChipWhisperer - Side-channel research
+                </div>
+            </div>`;
+        },
+        
+        comms: () => {
+            return `<div class="terminal-response">
+                <span class="terminal-prompt">Communication Systems:</span>
+                
+                <div style="margin-top: 10px;">
+                    <span class="terminal-prompt">∙</span> 5G network security<br>
+                    <span class="terminal-prompt">∙</span> Wireless protocol analysis<br>
+                    <span class="terminal-prompt">∙</span> SDR (Software Defined Radio)<br>
+                    <span class="terminal-prompt">∙</span> Secure communication protocols<br>
+                    <span class="terminal-prompt">∙</span> RF engineering fundamentals
+                </div>
+                
+                <div style="margin-top: 15px;">
+                    <span class="terminal-prompt">Key Technologies:</span><br>
+                    ∙ GNU Radio, MATLAB<br>
+                    ∙ Wireshark, Scapy<br>
+                    ∙ LTE/5G stack analysis<br>
+                    ∙ BLE, Zigbee, LoRa security
+                </div>
+                
+                <div style="margin-top: 15px;">
+                    <span class="terminal-prompt">Notable Projects:</span><br>
+                    ∙ 5G SecAnalyzer - Network slicing research<br>
+                    ∙ RF SecLab - Wireless security toolkit<br>
+                    ∙ SecureComms - Encrypted protocol design<br>
+                    ∙ SpectrumGuard - RF monitoring system
+                </div>
+            </div>`;
+        },
+        
+        certs: () => {
+            return `<div class="terminal-response">
+                <span class="terminal-prompt">Certifications:</span>
+                
+                <div style="margin-top: 10px;">
+                    <span class="badge badge-gold">OSCP</span> Offensive Security Certified Professional
+                </div>
+                <div style="margin: 5px 0;">
+                    <span class="badge badge-gold">CISSP</span> Certified Information Systems Security Professional
+                </div>
+                <div>
+                    <span class="badge badge-silver">Embedded Expert</span> IEEE Certified Embedded Systems Engineer
+                </div>
+                <div style="margin: 5px 0;">
+                    <span class="badge badge-silver">5G Security</span> GSMA Certified 5G Security Specialist
+                </div>
+                <div>
+                    <span class="badge badge-bronze">IoT Security</span> IoT Security Foundation Professional
+                </div>
+                
+                <div style="margin-top: 15px;">
+                    <span class="terminal-prompt">View all certifications in GUI mode</span>
+                </div>
+            </div>`;
+        },
+        
+        projects: () => {
+            return `<div class="terminal-response">
+                <span class="terminal-prompt">Featured Projects:</span>
+                
+                <div class="project-card">
+                    <div class="project-title">NeoBypasser</div>
+                    <div>Advanced proxy system for penetration testing and security research with Python.</div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Security</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                </div>
+                
+                <div class="project-card electronics">
+                    <div class="project-title electronics">SecureMCU</div>
+                    <div>Hardware security module for microcontrollers with secure boot and encrypted communication.</div>
+                    <div class="project-tags">
+                        <span class="tag electronics">C</span>
+                        <span class="tag electronics">ARM</span>
+                        <span class="tag">Security</span>
+                    </div>
+                </div>
+                
+                <div class="project-card communication">
+                    <div class="project-title communication">5G SecAnalyzer</div>
+                    <div>Research project analyzing security vulnerabilities in 5G network slicing.</div>
+                    <div class="project-tags">
+                        <span class="tag communication">Python</span>
+                        <span class="tag communication">5G</span>
+                        <span class="tag">Security</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 15px;">
+                    <span class="terminal-prompt">View all projects on GitHub:</span> <a href="https://github.com/Inihere0" style="color: var(--accent);">github.com/Inihere0</a>
+                </div>
+            </div>`;
+        },
+        
+        resume: () => {
+            return `<div class="terminal-response">
+                <span class="terminal-prompt">Resume Preview:</span>
+                
+                <div class="resume-preview">
+                    <h3 style="color: var(--accent); margin-bottom: 10px;">Ini - ECE & SECURITY ENGINEER</h3>
+                    <div style="margin-bottom: 15px;">
+                        <strong>Skills:</strong> Embedded Security, Python, FPGA, 5G Security, Penetration Testing
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <strong>Experience:</strong> 5+ years in hardware/software security roles
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <strong>Certifications:</strong> OSCP, CISSP, Embedded Expert, 5G Security
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <strong>Education:</strong> B.Tech in Electronics & Communication Engineering
+                    </div>
+                    
+                    <a href="#" class="download-btn" id="download-resume">DOWNLOAD RESUME</a>
+                </div>
+            </div>`;
+        },
+        
+        'download resume': () => {
+            // Create invisible download link
+            const link = document.createElement('a');
+            link.href = 'resume.pdf';
+            link.download = 'Ini_ECE_Cybersecurity_Resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            return `<div class="terminal-response">
+                Downloading resume... Check your downloads folder.
+            </div>`;
+        },
+        
+        contact: () => {
+            return `<div class="terminal-response">
+                <span class="terminal-prompt">Contact Information:</span>
+                
+                <div style="margin-top: 10px;">
+                    <strong>Email:</strong> Ini@hacker.lab
+                </div>
+                <div style="margin: 5px 0;">
+                    <strong>GitHub:</strong> github.com/Inihere0
+                </div>
+                <div>
+                    <strong>LinkedIn:</strong> linkedin.com/in/Ini-cybersec
+                </div>
+                <div style="margin: 5px 0;">
+                    <strong>Hardware:</strong> hackaday.io/Ini
+                </div>
+                <div>
+                    <strong>Research:</strong> researchgate.net/Ini
+                </div>
+            </div>`;
+        },
+        
+        gui: () => {
+            terminalMode.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            return '';
+        },
+        
+        clear: () => {
+            terminal.innerHTML = defaultTerminalContent;
+            currentCommand = document.getElementById('current-command');
+            return '';
+        },
+        
+        sudo: () => {
+            return `<div class="terminal-response" style="color: var(--hacker-red);">
+                <span style="font-weight: bold;">[!] ACCESS DENIED</span><br>
+                You don't have root privileges on this system!
+            </div>`;
+        }
+    };
+
+    // Process commands
+    function processCommand(cmd) {
+        const response = commands[cmd] ? commands[cmd]() : 
+            `<div class="terminal-response" style="color: var(--hacker-red);">
+                Command not found: ${cmd}. Type <span class="terminal-prompt">help</span> for available commands.
+            </div>`;
+        
+        if (response) {
+            terminal.innerHTML += response;
+        }
+        
+        // Add new command line
+        terminal.innerHTML += `<div class="terminal-line" id="command-line">
+            <span class="terminal-prompt">$</span> 
+            <span class="terminal-command" id="current-command"></span>
+            <span class="blink">█</span>
+        </div>`;
+        
+        // Setup download button if resume was shown
+        if (cmd === 'resume') {
+            const downloadBtn = document.getElementById('download-resume');
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    processCommand('download resume');
+                });
+            }
+        }
+        
+        terminal.scrollTop = terminal.scrollHeight;
+        currentCommand = document.getElementById('current-command');
+    }
+
+    // Handle input
+    inputField.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const cmd = inputField.value.trim().toLowerCase();
+            if (cmd) {
+                // Display the command
+                currentCommand.textContent = cmd;
+                inputField.value = '';
+                
+                // Process after a small delay for visual effect
+                setTimeout(() => {
+                    processCommand(cmd);
+                }, 50);
+            }
+        }
+    });
+
+    // Focus input on terminal click
+    terminal.addEventListener('click', () => {
+        inputField.focus();
+    });
+
+    // Auto-focus input on load
+    inputField.focus();
+</script>
+
+<!-- Matrix Background Animation -->
+<script>
+    // Matrix background effect
+    const canvas = document.getElementById('matrix-bg');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+    const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const nums = '0123456789';
+    const binary = '01';
+    const electronics = '⌐⌠⌡⌂⌃⌄⌅⌆⌇⌌⌍⌎⌏⌐⌑⌒⌓⌔⌕⌖⌗⌘⌙⌚⌛⌜⌝⌞⌟⌠⌡⌢⌣⌤⌥⌦⌧⌨⌫⌬⌭⌮⌯⌰⌱⌲⌳⌴⌵⌶⌷⌸⌹⌺⌻⌼⌽⌾⌿⍀⍁⍂⍃⍄⍅⍆⍇⍈⍉⍊⍋⍌⍍⍎⍏⍐⍑⍒⍓⍔⍕⍖⍗⍘⍙⍚⍛⍜⍝⍞⍟⍠⍡⍢⍣⍤⍥⍦⍧⍨⍩⍪⍫⍬⍭⍮⍯⍰⍱⍲⍳⍴⍵⍶⍷⍸⍹⍺';
+    
+    const alphabet = katakana + latin + nums + binary + electronics;
+
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+
+    const rainDrops = Array(columns).fill(1);
+
+    const draw = () => {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        ctx.fillStyle = '#0F0';
+        ctx.font = fontSize + 'px monospace';
+
+        for (let i = 0; i < rainDrops.length; i++) {
+            const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+            ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+            
+            if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                rainDrops[i] = 0;
+            }
+            rainDrops[i]++;
+        };
+
+setInterval(draw, 30);
+
+// Handle window resize
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+</script>
+<!-- Typing Animation -->
+<script>
+// Typing animation for hero terminal
+const terminalCommands = [
+    "whoami",
+    "cat skills.txt",
+    "python3 --version",
+    "./secure_the_world.sh",
+    "make flash",
+    "analyze_rf_signal.py"
+];
+
+const typingElements = document.querySelectorAll('.typing-text');
+let currentCommandIndex = 0;
+let currentCharIndex = 0;
+let isDeleting = false;
+
+function type() {
+    const currentElement = typingElements[currentCommandIndex % typingElements.length];
+    const currentText = terminalCommands[currentCommandIndex % terminalCommands.length];
+    
+    if (isDeleting) {
+        currentElement.textContent = currentText.substring(0, currentCharIndex - 1);
+        currentCharIndex--;
+        
+        if (currentCharIndex === 0) {
+            isDeleting = false;
+            currentCommandIndex = (currentCommandIndex + 1) % terminalCommands.length;
+            setTimeout(type, 500);
+        } else {
+            setTimeout(type, 50);
+        }
+    } else {
+        currentElement.textContent = currentText.substring(0, currentCharIndex + 1);
+        currentCharIndex++;
+        
+        if (currentCharIndex === currentText.length) {
+            isDeleting = true;
+            setTimeout(type, 2000);
+        } else {
+            setTimeout(type, 100);
+        }
+    }
+}
+
+// Start typing animation
+setTimeout(type, 1000);
+</script>
+
+<!-- Smooth Scrolling -->
+<script>
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        if (this.getAttribute('href') === '#') return;
+        
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+</script>
+
+<!-- Form Submission -->
+<script>
+    const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(contactForm);
+        formData.append("access_key", "f3434f06-a82d-4a3d-943b-e613aeb94c86");
+        formData.append("name", document.getElementById('name').value);
+        formData.append("email", document.getElementById('email').value);
+        formData.append("subject", document.getElementById('subject').value);
+        formData.append("message", document.getElementById('message').value);
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+            const result = await response.json();
+            
+            if (result.success) {
+                alert("Thank you! Your message has been sent successfully.");
+                contactForm.reset();
+            } else {
+                alert("Error: " + result.message);
+            }
+        } catch (error) {
+            alert("An error occurred. Please try again later.");
+        }
+    });
+}
+
+function trackDownload() {
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'resume_download', {
+            'event_category': 'engagement'
+        });
+    }
+    console.log('Resume download initiated');
+}
+
+</script>
+
+<!-- Circuit Animation -->
+<script>
+// Animate circuit overlay
+const circuitOverlay = document.querySelector('.circuit-overlay');
+let offset = 0;
+
+function animateCircuit() {
+    offset = (offset + 0.2) % 30;
+    circuitOverlay.style.backgroundPosition = `${offset}px ${offset}px`;
+    requestAnimationFrame(animateCircuit);
+}
+
+animateCircuit();
+</script>
+
+<!-- Theme Color Shift -->
+<script>
+// Gradually shift theme colors
+const root = document.documentElement;
+let hueShift = 0;
+
+function updateTheme() {
+    hueShift = (hueShift + 0.1) % 360;
+    
+    // Convert HSL to RGB for the accent color
+    const hue = (120 + hueShift) % 360; // Start with green (120) and shift
+    const accentColor = `hsl(${hue}, 100%, 50%)`;
+    const accentGlow = `hsla(${hue}, 100%, 50%, 0.4)`;
+    
+    root.style.setProperty('--accent', accentColor);
+    root.style.setProperty('--accent-glow', accentGlow);
+    
+    requestAnimationFrame(updateTheme);
+}
+
+// Start the animation
+updateTheme();
+</script>
+</body>
+</html>
